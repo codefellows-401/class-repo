@@ -1,0 +1,11 @@
+{
+  "name": "code-review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "list.js",
+  "scripts": {
+    "test": "jest --verbose --coverage --watchAll"
+  },
+  "author": "",
+  "license": "MIT"
+}

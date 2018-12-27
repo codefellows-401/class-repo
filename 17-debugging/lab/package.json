@@ -1,0 +1,43 @@
+{
+  "name": "super-goose-skeleton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "db": "mongod --dbpath=/path/to/your/db",
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test-watch": "jest --watchAll",
+    "test": "jest",
+    "lint": "eslint **/*.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-env": "^2.4.1",
+    "babel-eslint": "^10.0.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "bcrypt": "^3.0.2",
+    "cors": "^2.8.4",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.8"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.8.0",
+    "jest": "^23.6.0",
+    "mongodb-memory-server": "^2.6.2",
+    "supertest": "^3.3.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/supergoose.js",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "description": ""
+}

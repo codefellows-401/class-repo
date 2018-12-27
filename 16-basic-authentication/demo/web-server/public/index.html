@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Auth Test</title>
+    </head>
+    <body>
+        <main>
+            <form action="http://localhost:3000/signup" method="POST">
+                <label>
+                Username: <input name="username">
+                </label>
+
+                <label>
+                    Password: <input name="password" type="password" />
+                </label>
+
+                <input type="submit" value="Create User" />
+            </form>
+
+            <form id="signin">
+                <label>
+                    Username:
+                    <input name="username">
+                </label>
+
+                <label>
+                    Password:
+                    <input name="password" type="password" />
+                </label>
+
+                <input type="submit" value="Sign In" />
+            </form>
+
+            <div id="token"></div>
+
+        </main>
+
+        <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+        <script>
+            $('#signin').on('submit', function (e) {
+                e.preventDefault();
+                let username = $(this).find('[name=username]').val();
+                let password = $(this).find('[name=password]').val();
+                let authstring = btoa(`${username}:${password}`);
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/signin",
+                    async: false,
+                    headers: {
+                        "Authorization": "Basic " + authstring
+                    },
+                    success: function (data) {
+                        token = data;
+                        $('#token').text(token);
+                    },
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "list",
+  "version": "1.0.0",
+  "description": "list demo for 401d27",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose --coverage",
+    "watch": "jest --verbose --coverage --watchAll"
+  },
+  "author": "Allie Grampa",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
+}
